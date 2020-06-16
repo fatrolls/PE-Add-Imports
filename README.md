@@ -3,11 +3,20 @@ Add Custom Section to any EXE or DLL.
 
 Usage
 ```
-    #include "PEFile.h"
+#include "PEFile.h"
 
-    PEFile pe("1.exe"); 
-    pe.addSection(".at4re", 0x1000, false);
-    char* functions[] = { "MessageBoxA", "ShowWindow" }; 
-    pe.addImport("user32.dll", functions, 2); 
-    pe.saveToFile("1+.exe");
+int main(int argc, char* argv[]) {
+	// Open the input file
+	PEFile pe("1.exe");
+
+	// Add "MessageBoxA" & "ShowWindow" functions to the import table
+	char* functions[] = { "MessageBoxA", "ShowWindow" };
+	pe.addImport("user32.dll", functions, 2);
+	
+	// Add a new section named ".at4re" with size "0x1000" byte
+	pe.addSection(".at4re", 0x1000, false);
+	
+	// Save the modified file
+	pe.saveToFile("1+.exe");
+}
 ```
