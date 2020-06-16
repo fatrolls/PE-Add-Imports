@@ -3,6 +3,8 @@ Add Custom Section to any EXE or DLL.
 
 Usage
 ```
+    #include "PEFile.h"
+
     PEFile pe("1.exe"); 
     pe.addSection(".at4re", 0x1000, false);
     char* functions[] = { "MessageBoxA", "ShowWindow" }; 
