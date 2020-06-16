@@ -1,4 +1,4 @@
-Add Imports to any EXE.. function calls and new dll to load.
+Add Imports to any EXE.. function calls and new dll to load.<br>
 Add Custom Section to any EXE or DLL.
 
 Usage
